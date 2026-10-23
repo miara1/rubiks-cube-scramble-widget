@@ -1,0 +1,10 @@
+/target/
+/dist/
+/.build/
+/.idea/
+/.vscode/
+*.iml
+*.log
+Thumbs.db
+Desktop.ini
+.DS_Store
