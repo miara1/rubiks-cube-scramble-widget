@@ -31,7 +31,9 @@ If this repository has no release yet, build it using the instructions below. Th
 
 The panel appears above ordinary application windows on the monitor containing the mouse pointer, above the taskbar. Showing it does not take keyboard focus away from the current application. Hiding it preserves the scramble. Generating a scramble while hidden leaves the panel hidden. Busy requests are ignored; one next scramble is prepared in the background.
 
-The strip is 440 × 28 logical pixels, with 12-point text and a small refresh icon. Longer scrambles use a slightly smaller font to fit on one line without ellipses. Windows display scaling applies normally.
+The strip is 440 × 28 logical pixels. Longer scrambles use a smaller font to fit on one line. Windows display scaling applies normally.
+
+Click the **bookmark** to save the current scramble with an optional comment. The **up arrow** opens a menu with **New scramble**, **Save scramble** and **Scramble library**. Select an entry in the library to copy its moves or delete it after confirmation. Saved entries are kept locally in `%APPDATA%\RubiksCubeScrambleWidget\scrambles.properties`.
 
 Autostart is **off by default**. When enabled, the widget starts hidden at the next login. Disable it before moving or deleting the app's folder; enable it again after moving. Only one instance runs per Windows user.
 
@@ -66,8 +68,8 @@ Outputs:
 
 ```text
 dist/RubiksCubeScrambleWidget/RubiksCubeScrambleWidget.exe
-dist/rubiks-cube-scramble-widget-1.0.0-windows-x64.zip
-dist/rubiks-cube-scramble-widget-1.0.0-source.zip
+dist/rubiks-cube-scramble-widget-1.1.0-windows-x64.zip
+dist/rubiks-cube-scramble-widget-1.1.0-source.zip
 dist/SHA256SUMS.txt
 ```
 
@@ -100,7 +102,7 @@ This is an independent **training utility**, not an official WCA competition app
 
 Bug reports should include the Windows version, display scaling, widget version and relevant local log messages. Please keep changes focused on the small offline widget.
 
-The Windows workflow tests and packages pushes and pull requests. Pushing a version tag such as `v1.0.0` creates a **draft** GitHub release with the binary ZIP, matching source ZIP and checksums. Review it before publishing. See [publishing instructions](docs/publishing.md) for repository setup, search topics and the release checklist.
+The Windows workflow tests and packages pushes and pull requests. Pushing a version tag such as `v1.1.0` creates a **draft** GitHub release with the binary ZIP, matching source ZIP and checksums. Review it before publishing. See [publishing instructions](docs/publishing.md) for repository setup, search topics and the release checklist.
 
 ## License
 

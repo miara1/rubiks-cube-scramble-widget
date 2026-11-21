@@ -3,24 +3,29 @@ package io.github.scramblewidget;
 import static org.junit.jupiter.api.Assertions.*;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.nio.file.Path;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.io.TempDir;
 import javax.swing.SwingUtilities;
 
 @EnabledOnOs(OS.WINDOWS)
 @EnabledIfSystemProperty(named = "desktopTests", matches = "true")
 class WindowsDesktopTest {
+    @TempDir Path directory;
+
     @Test void realGlobalShortcutsToggleWidgetAndRequestNextWithoutTakingFocus() throws Exception {
         Settings settings = new Settings(Hotkey.parse("Ctrl+Shift+Alt+F10"), Hotkey.parse("Ctrl+Shift+Alt+F11"));
         CountDownLatch shown = new CountDownLatch(1);
         CountDownLatch hidden = new CountDownLatch(1);
         CountDownLatch next = new CountDownLatch(1);
         WidgetWindow[] window = new WidgetWindow[1];
-        SwingUtilities.invokeAndWait(() -> window[0] = new WidgetWindow(settings, next::countDown));
+        SwingUtilities.invokeAndWait(() -> window[0] = new WidgetWindow(settings, next::countDown,
+                new ScrambleLibrary(directory.resolve("scrambles.properties"))));
         try (var hotkeys = new WindowsHotkeys()) {
             assertTrue(hotkeys.start(settings, () -> {
                 window[0].toggle();

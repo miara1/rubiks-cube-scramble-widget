@@ -24,7 +24,8 @@ public final class RenderPreview {
             try {
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 var settings = new Settings(Hotkey.parse(Settings.DEFAULT_TOGGLE), Hotkey.parse(Settings.DEFAULT_NEXT));
-                WidgetWindow window = new WidgetWindow(settings, () -> {});
+                WidgetWindow window = new WidgetWindow(settings, () -> {},
+                        new ScrambleLibrary(Path.of("target", "preview-scrambles.properties")));
                 window.showScramble(scramble);
                 window.setBusy(false);
                 window.addNotify();

@@ -25,6 +25,8 @@ Wymagany Windows 10 lub 11 w wersji 64-bitowej. Zachowaj obok programu foldery `
 
 Panel pojawia się nad zwykłymi oknami, nad paskiem zadań, na monitorze z kursorem myszy. Nie przejmuje klawiatury. Schowanie zachowuje aktualny scramble. Skrót nowego scrambla działa również przy schowanym panelu, bez pokazywania go.
 
+Kliknij **zakładkę** obok ↻, aby zapisać aktualny scramble z opcjonalnym komentarzem. **Strzałka w górę** otwiera menu z opcjami **New scramble**, **Save scramble** i **Scramble library**. W bibliotece możesz skopiować ruchy zaznaczonego wpisu lub usunąć go po potwierdzeniu. Zapisy są przechowywane lokalnie w `%APPDATA%\RubiksCubeScrambleWidget\scrambles.properties`.
+
 Autostart jest domyślnie wyłączony. Po włączeniu aplikacja startuje schowana przy logowaniu. Wyłącz autostart przed przeniesieniem lub usunięciem folderu programu. Po przeniesieniu możesz włączyć go ponownie.
 
 ## Zmiana skrótów

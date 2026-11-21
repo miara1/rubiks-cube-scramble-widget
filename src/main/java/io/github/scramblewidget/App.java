@@ -33,7 +33,8 @@ public final class App {
         this.instance = instance;
         this.settingsFile = settingsFile;
         this.settings = settings;
-        window = new WidgetWindow(settings, this::nextScramble);
+        window = new WidgetWindow(settings, this::nextScramble,
+                new ScrambleLibrary(settingsFile.resolveSibling("scrambles.properties")));
     }
 
     public static void main(String[] args) {
@@ -124,7 +125,7 @@ public final class App {
     }
 
     private void nextScramble() {
-        if (busy || closed) return;
+        if (busy || closed || window.hasOpenDialog()) return;
         busy = true;
         window.setBusy(true);
         scrambles.next().whenComplete((scramble, error) -> SwingUtilities.invokeLater(() -> {

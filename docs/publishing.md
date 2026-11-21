@@ -36,8 +36,8 @@ Set the About description and topics on GitHub. The English README explains the 
 3. Commit the sources and create a matching tag:
 
    ```powershell
-   git tag v1.0.0
-   git push origin v1.0.0
+   git tag v1.1.0
+   git push origin v1.1.0
    ```
 
 4. GitHub Actions creates a **draft** release. Check that it includes the binary ZIP, matching source ZIP and `SHA256SUMS.txt`. Publish the draft when ready.
